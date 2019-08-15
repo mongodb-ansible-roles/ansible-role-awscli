@@ -4,3 +4,4 @@
     name:
       - awscli
     state: present
+    version: "{{ awscli_version }}"
