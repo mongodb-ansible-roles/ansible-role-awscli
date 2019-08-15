@@ -3,6 +3,8 @@ Ansible AWS Command Line Interface
 
 Installs the AWS Command Line Interface (CLI)
 
+[![CircleCI](https://img.shields.io/circleci/build/github/mongodb-ansible-roles/ansible-role-awscli/master?style=flat-square)](https://circleci.com/gh/mongodb-ansible-roles)
+
 Requirements
 ------------
 
