@@ -4,8 +4,7 @@ jobs:
     docker:
       - image: retr0h/molecule:2.19
     steps:
-      - checkout:
-          path: $CIRCLE_PROJECT_REPONAME
+      - checkout
       - setup_remote_docker
       - run: echo "cd ~/project/$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
       - run: sudo molecule test
