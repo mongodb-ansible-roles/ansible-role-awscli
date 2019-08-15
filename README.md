@@ -11,7 +11,9 @@ None
 Role Variables
 --------------
 
-None
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-------:|:--------:|
+| awscli\_version | The version of the awscli to install | string | `""` | no |
 
 Dependencies
 ------------
@@ -24,7 +26,7 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-    - { role: ansible-role-awscli }
+    - { role: ansible-role-awscli, vars: { awscli_version: "1.16.218" } }
 ```
 
 License
