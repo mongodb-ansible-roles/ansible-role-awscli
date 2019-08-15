@@ -6,7 +6,8 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - run: echo "cd ~/project/$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
+      - run: mv ~/project ~/$CIRCLE_PROJECT_REPONAME
+      - run: echo "cd ~/$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
       - run: sudo molecule test
 
   release:
