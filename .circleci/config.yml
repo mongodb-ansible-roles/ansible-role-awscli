@@ -1,0 +1,38 @@
+---
+jobs:
+  test:
+    docker:
+      - image: retr0h/molecule:2.19
+    steps:
+      - checkout:
+          path: $CIRCLE_PROJECT_REPONAME
+      - setup_remote_docker
+      - run: echo "cd ~/project/$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
+      - run: sudo molecule test
+
+  release:
+    docker:
+      - image: circleci/node:10.16
+    steps:
+      - checkout
+      - restore_cache:
+          key: npm-cache
+      - run: npm install @semantic-release/changelog -D
+      - run: npm install @semantic-release/git -D
+      - save_cache:
+          key: npm-cache
+          paths:
+            - node_modules
+      - run: npx semantic-release
+version: 2
+workflows:
+  test-release:
+    jobs:
+      - test
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
+  version: 2
