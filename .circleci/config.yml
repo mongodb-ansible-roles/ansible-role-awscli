@@ -2,13 +2,13 @@
 jobs:
   test:
     docker:
-      - image: retr0h/molecule:2.19
+      - image: quay.io/ansible/molecule:2.20.2
     steps:
       - checkout
       - setup_remote_docker
       - run: mv ~/project ~/$CIRCLE_PROJECT_REPONAME
       - run: echo "cd ~/$CIRCLE_PROJECT_REPONAME" >> $BASH_ENV
-      - run: sudo molecule test
+      - run: molecule test
 
   release:
     docker:
