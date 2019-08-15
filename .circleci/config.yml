@@ -2,7 +2,7 @@
 jobs:
   test:
     docker:
-      - image: quay.io/ansible/molecule:2.20.2
+      - image: quay.io/mongodb-build/molecule
     steps:
       - checkout
       - setup_remote_docker
