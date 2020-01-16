@@ -9,8 +9,14 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.6
-      - name: Install required dependencies
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.x'
+      - name: Install required Python dependencies
         run: pip install molecule==2.20.2 molecule[docker]
+      - name: Install required Ruby dependencies
+        run: gem install rubocop
       - run: molecule test --all
 name: Molecule Test
 on: [push, pull_request]
