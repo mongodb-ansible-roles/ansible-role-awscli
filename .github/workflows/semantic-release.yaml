@@ -1,3 +1,4 @@
+---
 jobs:
   release:
     env:
