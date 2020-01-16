@@ -14,7 +14,7 @@ jobs:
         with:
           ruby-version: '2.x'
       - name: Install required Python dependencies
-        run: pip install molecule==2.20.2 molecule[docker]
+        run: pip install docker molecule==2.20.2 molecule[docker]
       - name: Install required Ruby dependencies
         run: gem install rubocop
       - run: molecule test --all
