@@ -10,7 +10,7 @@ jobs:
         with:
           python-version: 3.6
       - name: Install required dependencies
-        run: pip install -r requirements.txt
+        run: pip install molecule==2.20.2 molecule[docker]
       - run: molecule test --all
 name: Molecule Test
 on: [push, pull_request]
