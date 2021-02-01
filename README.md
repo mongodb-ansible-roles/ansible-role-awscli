@@ -3,24 +3,21 @@ Ansible AWS Command Line Interface
 
 Installs the AWS Command Line Interface (CLI)
 
-[![CircleCI](https://img.shields.io/circleci/build/github/mongodb-ansible-roles/ansible-role-awscli/master?style=flat-square)](https://circleci.com/gh/mongodb-ansible-roles/ansible-role-awscli)
-
-Requirements
-------------
-
-None
+[![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-awscli/workflows/Molecule%20Test/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-awscli/actions?query=workflow%3A%22Molecule+Test%22)
+[![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-awscli/workflows/Release/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-awscli/actions?query=workflow%3A%22Release%22)
 
 Role Variables
 --------------
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-| awscli\_version | The version of the awscli to install | string | `""` | no |
+| `awscli_url` | The URL of the awscli installer | string | `https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ awscli_version }}.zip` | no |
+| `awscli_version` | The version of the awscli to install | string | `""` | no |
 
-Dependencies
-------------
+Versions
+--------
 
-- [`geerlingguy.pip`](https://galaxy.ansible.com/geerlingguy/pip)
+The versions of AWS CLI are available here: https://github.com/aws/aws-cli/blob/v2/CHANGELOG.rst
 
 Example Playbook
 ----------------
@@ -28,7 +25,9 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-    - { role: ansible-role-awscli, vars: { awscli_version: "1.16.218" } }
+    - role: ansible-role-awscli
+      vars:
+        awscli_version: 2.1.22
 ```
 
 License

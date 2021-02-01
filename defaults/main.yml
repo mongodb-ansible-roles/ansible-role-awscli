@@ -1,2 +1,3 @@
 ---
+awscli_url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64-{{ awscli_version }}.zip
 awscli_version: ""
