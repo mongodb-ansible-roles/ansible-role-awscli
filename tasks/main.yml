@@ -1,7 +1,12 @@
 ---
 - name: Install awscli
-  pip:
-    name:
-      - awscli
-    state: present
-    version: "{{ awscli_version }}"
+  unarchive:
+    src: "{{ awscli_url }}"
+    remote_src: true
+    dest: /tmp
+
+- name: Run aws cli install script
+  become: true
+  command: /tmp/aws/install
+  args:
+    creates: /usr/local/bin/aws

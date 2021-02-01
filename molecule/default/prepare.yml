@@ -1,0 +1,9 @@
+---
+- become: true
+  name: Prepare
+  hosts: all
+  tasks:
+    - name: Install unzip
+      package:
+        name: unzip
+        state: present
