@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mongodb-ansible-roles/ansible-role-awscli/compare/v1.1.0...v1.2.0) (2021-02-01)
+
+
+### Features
+
+* Download and install awscli from source ([6b15f95](https://github.com/mongodb-ansible-roles/ansible-role-awscli/commit/6b15f95843bfa26416c77004fc0f415e6801359e))
+
 # [1.1.0](https://github.com/mongodb-ansible-roles/ansible-role-awscli/compare/v1.0.0...v1.1.0) (2020-01-16)
 
 
